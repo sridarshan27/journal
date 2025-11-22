@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RuralCare with X - Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <i class="fas fa-heartbeat"></i>
+                <span>RuralCare with X</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="dashboard.html">Dashboard</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="logoutBtnDash" class="btn btn-secondary">Logout</button>
+            </div>
+        </nav>
+    </header>
+
+    <section class="features" style="padding-top:120px">
+        <div class="container">
+            <h2>Welcome</h2>
+            <div class="features-grid">
+                <a class="feature-card" href="consultation.html">
+                    <i class="fas fa-video"></i>
+                    <h3>Video Consultation</h3>
+                    <p>Start a secure call with a doctor</p>
+                </a>
+                <a class="feature-card" href="records.html">
+                    <i class="fas fa-file-medical"></i>
+                    <h3>Health Records</h3>
+                    <p>View and manage your records</p>
+                </a>
+                <a class="feature-card" href="pharmacy.html">
+                    <i class="fas fa-pills"></i>
+                    <h3>Pharmacy</h3>
+                    <p>Check medicine availability</p>
+                </a>
+                <a class="feature-card" href="symptoms.html">
+                    <i class="fas fa-robot"></i>
+                    <h3>Symptom Checker</h3>
+                    <p>Analyze your symptoms</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script src="config.js"></script>
+    <script src="translations.js"></script>
+    <script src="app.js"></script>
+    <script>
+        // Ensure auth
+        if (!localStorage.getItem('ruralcare_token')) {
+            window.location.replace('index.html');
+        }
+        // Logout
+        document.getElementById('logoutBtnDash').addEventListener('click', () => {
+            localStorage.removeItem('ruralcare_token');
+            localStorage.removeItem('ruralcare_email');
+            window.location.replace('index.html');
+        });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>RuralCare with X – Welcome</title>
+	<link rel="stylesheet" href="styles.css">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+	<link rel="manifest" href="manifest.json">
+	<meta name="theme-color" content="#667eea">
+</head>
+<body style="min-height:100vh; display:flex; align-items:center; justify-content:center;">
+	<div class="container" style="max-width:840px;">
+		<div style="display:grid; grid-template-columns: 1.1fr 0.9fr; gap: 2rem; align-items:center;">
+			<div>
+				<div class="eyebrow" aria-hidden="true">
+					<span class="pill">PWA</span>
+					<span class="dot"></span>
+					<span class="pill">Offline-first</span>
+				</div>
+				<h1 style="color:#fff; line-height:1.15; font-size:3rem; margin-bottom:10px;">RuralCare with X</h1>
+				<p style="color:#f0f3ff; font-size:1.1rem; opacity:0.95; margin-bottom:22px;">Telemedicine for Rural India — video consultations, digital health records, medicine availability, and AI symptom checks in multiple languages.</p>
+				<div style="display:flex; gap:12px; flex-wrap:wrap;">
+					<a class="btn btn-accent" href="index.html">Enter App</a>
+					<a class="btn btn-secondary" href="dashboard.html">Go to Dashboard</a>
+					<button class="btn btn-primary" id="loginCta">Login</button>
+				</div>
+				<div class="trust-badges" style="margin-top:16px;">
+					<div class="badge"><i class="fas fa-shield-halved"></i><span>Secure & Private</span></div>
+					<div class="badge"><i class="fas fa-wifi"></i><span>Works Offline</span></div>
+					<div class="badge"><i class="fas fa-language"></i><span>6 Languages</span></div>
+				</div>
+			</div>
+			<div>
+				<div class="telemedicine-illustration" style="margin: 0 auto;">
+					<i class="fas fa-video"></i>
+					<i class="fas fa-user-md"></i>
+					<i class="fas fa-mobile-alt"></i>
+				</div>
+				<div style="text-align:center; margin-top:14px; color:#e9ecff; opacity:0.9; font-size:0.95rem;">
+					<i class="fas fa-circle-notch fa-spin" style="margin-right:6px;"></i>
+					Ready to work online or offline
+				</div>
+			</div>
+		</div>
+		<div style="display:grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top:28px;">
+			<div class="stat" style="background:#ffffff; border-radius:12px; padding:16px; box-shadow:0 10px 30px rgba(0,0,0,0.08);">
+				<span class="stat-number">50k+</span>
+				<span class="stat-label">Patients</span>
+			</div>
+			<div class="stat" style="background:#ffffff; border-radius:12px; padding:16px; box-shadow:0 10px 30px rgba(0,0,0,0.08);">
+				<span class="stat-number">1,200+</span>
+				<span class="stat-label">Villages</span>
+			</div>
+			<div class="stat" style="background:#ffffff; border-radius:12px; padding:16px; box-shadow:0 10px 30px rgba(0,0,0,0.08);">
+				<span class="stat-number">600+</span>
+				<span class="stat-label">Health workers</span>
+			</div>
+			<div class="stat" style="background:#ffffff; border-radius:12px; padding:16px; box-shadow:0 10px 30px rgba(0,0,0,0.08);">
+				<span class="stat-number">24x7</span>
+				<span class="stat-label">Support</span>
+			</div>
+		</div>
+		<div class="partners-row" style="margin-top:24px;">
+			<div class="partner"><i class="fas fa-hospital"></i><span>PHC</span></div>
+			<div class="partner"><i class="fas fa-people-group"></i><span>NGO</span></div>
+			<div class="partner"><i class="fas fa-satellite-dish"></i><span>Telecom</span></div>
+			<div class="partner"><i class="fas fa-truck-medical"></i><span>Ambulance</span></div>
+		</div>
+	</div>
+
+	<!-- Login Modal -->
+	<div id="loginModal" class="modal-overlay" style="display:none">
+		<div class="modal">
+			<div class="modal-header">
+				<h3 data-translate="login_title">Login to RuralCare with X</h3>
+				<button class="modal-close" id="loginClose">×</button>
+			</div>
+			<div class="modal-body">
+				<label for="loginEmail" data-translate="email_label">Email</label>
+				<input type="email" id="loginEmail" placeholder="you@example.com">
+				<label for="loginPassword" data-translate="password_label">Password</label>
+				<input type="password" id="loginPassword" placeholder="••••••••">
+				<button class="btn btn-primary" id="loginSubmit" data-translate="btn_login">Login</button>
+				<p class="modal-hint" data-translate="login_hint">Tip: Use any email and a password 6+ characters to demo.</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- Chatbot Widget -->
+	<button id="chatbotToggle" class="chatbot-toggle" aria-label="Open medical assistant">
+		<i class="fas fa-comment-medical"></i>
+	</button>
+	<div id="chatbotPanel" class="chatbot-panel" role="dialog" aria-label="Medical assistant">
+		<div class="chatbot-header">
+			<h4>Medical Assistant</h4>
+			<button style="background:transparent;border:none;color:#fff;cursor:pointer" onclick="document.getElementById('chatbotPanel').style.display='none'">×</button>
+		</div>
+		<div id="chatbotMessages" class="chatbot-messages"></div>
+		<div class="chatbot-input">
+			<input id="chatbotInput" type="text" placeholder="Describe your symptoms or ask a question...">
+			<button id="chatbotSend" class="btn btn-primary">Send</button>
+		</div>
+	</div>
+
+	<script src="config.js"></script>
+	<script src="translations.js"></script>
+	<script src="app.js"></script>
+	<script>
+		// Wire login CTA for front page
+		const frontLoginCta = document.getElementById('loginCta');
+		if (frontLoginCta) frontLoginCta.addEventListener('click', () => app && app.showLogin && app.showLogin());
+	</script>
+</body>
+</html> 

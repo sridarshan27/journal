@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultation - RuralCare with X</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <i class="fas fa-heartbeat"></i>
+                <span>RuralCare with X</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="dashboard.html">Dashboard</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="consultation-section" style="padding-top:120px">
+        <div class="container">
+            <h2>Video Consultation</h2>
+            <div class="consultation-container">
+                <div class="video-container">
+                    <video id="localVideo" autoplay muted></video>
+                    <video id="remoteVideo" autoplay></video>
+                    <div class="video-controls">
+                        <button id="startCall" class="btn btn-primary">Start Call</button>
+                        <button id="endCall" class="btn btn-danger" style="display:none">End Call</button>
+                        <button id="toggleMic" class="btn btn-secondary"><i class="fas fa-microphone"></i></button>
+                        <button id="toggleCamera" class="btn btn-secondary"><i class="fas fa-video"></i></button>
+                    </div>
+                </div>
+                <div class="consultation-info">
+                    <h3>How it works</h3>
+                    <ol>
+                        <li>Select language</li>
+                        <li>Choose a doctor</li>
+                        <li>Start your call</li>
+                        <li>Receive prescription</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="config.js"></script>
+    <script src="translations.js"></script>
+    <script src="app.js"></script>
+    <script>
+        if (!localStorage.getItem('ruralcare_token')) {
+            window.location.replace('index.html');
+        }
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,175 @@
+{
+  "name": "RuralCare with X - Telemedicine for Rural India",
+  "short_name": "RuralCare X",
+  "description": "A comprehensive telemedicine platform for rural healthcare access in India",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#667eea",
+  "theme_color": "#667eea",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["health", "medical", "telemedicine"],
+  "icons": [
+    {
+      "src": "icons/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "screenshots/desktop-home.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "RuralCare with X Home Screen"
+    },
+    {
+      "src": "screenshots/mobile-consultation.png",
+      "sizes": "375x667",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Video Consultation on Mobile"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Start Consultation",
+      "short_name": "Consultation",
+      "description": "Start a video consultation with a doctor",
+      "url": "/#consultation",
+      "icons": [
+        {
+          "src": "icons/shortcut-consultation.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Health Records",
+      "short_name": "Records",
+      "description": "View your digital health records",
+      "url": "/#records",
+      "icons": [
+        {
+          "src": "icons/shortcut-records.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Symptom Checker",
+      "short_name": "Symptoms",
+      "description": "AI-powered symptom analysis",
+      "url": "/#symptoms",
+      "icons": [
+        {
+          "src": "icons/shortcut-symptoms.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Pharmacy Search",
+      "short_name": "Pharmacy",
+      "description": "Search for medicine availability",
+      "url": "/#pharmacy",
+      "icons": [
+        {
+          "src": "icons/shortcut-pharmacy.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "launch_handler": {
+    "client_mode": "focus-existing"
+  },
+  "file_handlers": [
+    {
+      "action": "/upload",
+      "accept": {
+        "image/*": [".jpg", ".jpeg", ".png", ".gif"],
+        "application/pdf": [".pdf"]
+      }
+    }
+  ],
+  "protocol_handlers": [
+    {
+      "protocol": "web+ruralcare",
+      "url": "/?protocol=%s"
+    }
+  ],
+  "share_target": {
+    "action": "/share",
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url",
+      "files": [
+        {
+          "name": "file",
+          "accept": ["image/*", "application/pdf"]
+        }
+      ]
+    }
+  },
+  "features": [
+    "Cross Platform",
+    "fast",
+    "simple"
+  ],
+  "iarc_rating_id": "e84b072d-71b3-4d3e-86ae-31a8ce4e53b7"
+}

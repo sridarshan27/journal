@@ -1,0 +1,1040 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Language Selector */
+.language-selector {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.language-selector select {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 20px;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* Header */
+.header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.nav-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #667eea;
+}
+
+.nav-brand i {
+    margin-right: 0.5rem;
+    font-size: 1.8rem;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: #667eea;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: #333;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+/* Hero Section */
+.hero {
+    padding: 120px 0 80px;
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    flex: 1;
+    padding: 0 2rem;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.telemedicine-illustration {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+}
+
+.telemedicine-illustration i {
+    font-size: 4rem;
+    margin: 0 1rem;
+    opacity: 0.8;
+    animation: float 3s ease-in-out infinite;
+}
+
+.telemedicine-illustration i:nth-child(2) {
+    animation-delay: 1s;
+}
+
+.telemedicine-illustration i:nth-child(3) {
+    animation-delay: 2s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+/* Buttons */
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.btn-danger {
+    background: #e74c3c;
+    color: white;
+}
+
+.btn-danger:hover {
+    background: #c0392b;
+    transform: translateY(-2px);
+}
+
+.btn-accent {
+    background: linear-gradient(45deg, #ff7eb3, #ff758c);
+    color: #fff;
+    box-shadow: 0 6px 20px rgba(255, 117, 140, 0.5);
+    border: 0;
+}
+
+.btn-accent:hover {
+    transform: translateY(-2px) scale(1.02);
+}
+
+/* Disabled overlay for locked sections */
+.locked {
+    position: relative;
+    filter: grayscale(0.3) opacity(0.7);
+    pointer-events: none;
+}
+
+.locked::after {
+    content: 'Login to access';
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    background: rgba(0,0,0,0.4);
+    color: #fff;
+    font-weight: 600;
+    border-radius: 12px;
+}
+
+/* Features Section */
+.features {
+    padding: 80px 0;
+    background: white;
+}
+
+.features h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #333;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.feature-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+}
+
+.feature-card i {
+    font-size: 3rem;
+    color: #667eea;
+    margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.feature-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Consultation Section */
+.consultation-section {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.consultation-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #333;
+}
+
+.consultation-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.video-container {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+#localVideo, #remoteVideo {
+    width: 100%;
+    height: 300px;
+    background: #000;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+#localVideo {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 150px;
+    height: 100px;
+    z-index: 10;
+}
+
+.video-controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.consultation-info {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.consultation-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.consultation-info ol {
+    padding-left: 1.5rem;
+}
+
+.consultation-info li {
+    margin-bottom: 0.5rem;
+    color: #666;
+}
+
+/* Records Section */
+.records-section {
+    padding: 80px 0;
+    background: white;
+}
+
+.records-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #333;
+}
+
+.records-actions {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.offline-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 8px 16px;
+    background: #27ae60;
+    color: white;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.offline-indicator.offline {
+    background: #e74c3c;
+}
+
+.records-list {
+    display: grid;
+    gap: 1rem;
+}
+
+.record-item {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 10px;
+    border-left: 4px solid #667eea;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.record-info h4 {
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.record-info p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.record-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.record-actions button {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+}
+
+/* Pharmacy Section */
+.pharmacy-section {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.pharmacy-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #333;
+}
+
+.pharmacy-search {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pharmacy-search input {
+    flex: 1;
+    padding: 12px 16px;
+    border: 2px solid #ddd;
+    border-radius: 25px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.pharmacy-search input:focus {
+    border-color: #667eea;
+}
+
+.pharmacy-results {
+    display: grid;
+    gap: 1rem;
+}
+
+.pharmacy-item {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pharmacy-info h4 {
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.pharmacy-info p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.availability {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.availability.available {
+    background: #d4edda;
+    color: #155724;
+}
+
+.availability.low-stock {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.availability.out-of-stock {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+/* Symptoms Section */
+.symptoms-section {
+    padding: 80px 0;
+    background: white;
+}
+
+.symptoms-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #333;
+}
+
+.symptom-checker {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+.symptom-input {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 15px;
+}
+
+.symptom-input h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+#symptomDescription {
+    width: 100%;
+    height: 120px;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-size: 1rem;
+    resize: vertical;
+    margin-bottom: 1rem;
+    font-family: inherit;
+}
+
+.symptom-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.symptom-btn {
+    padding: 8px 16px;
+    border: 2px solid #667eea;
+    background: white;
+    color: #667eea;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.symptom-btn:hover,
+.symptom-btn.selected {
+    background: #667eea;
+    color: white;
+}
+
+.symptom-results {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.symptom-results h3 {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.symptom-results p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Footer */
+.footer {
+    background: #2c3e50;
+    color: white;
+    padding: 3rem 0 1rem;
+}
+
+/* Modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1002;
+}
+
+.modal {
+    background: #fff;
+    width: 90%;
+    max-width: 420px;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.25rem;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: #fff;
+}
+
+.modal-close {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.modal-body {
+    display: grid;
+    gap: 0.75rem;
+    padding: 1.25rem;
+}
+
+.modal-body label {
+    font-weight: 600;
+    color: #333;
+}
+
+.modal-body input {
+    padding: 10px 12px;
+    border: 2px solid #eee;
+    border-radius: 10px;
+    font-size: 1rem;
+}
+
+.modal-hint {
+    color: #666;
+    font-size: 0.85rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+    margin-bottom: 1rem;
+    color: #ecf0f1;
+}
+
+.footer-section p {
+    color: #bdc3c7;
+    line-height: 1.6;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid #34495e;
+    color: #bdc3c7;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: white;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0,0,0,0.05);
+        padding: 2rem 0;
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 100px 0 60px;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-buttons {
+        justify-content: center;
+    }
+    
+    .consultation-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .symptom-checker {
+        grid-template-columns: 1fr;
+    }
+    
+    .pharmacy-search {
+        flex-direction: column;
+    }
+    
+    .records-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .telemedicine-illustration {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .telemedicine-illustration i {
+        font-size: 2.5rem;
+        margin: 0 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .features h2,
+    .consultation-section h2,
+    .records-section h2,
+    .pharmacy-section h2,
+    .symptoms-section h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Loading Animation */
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #667eea;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Offline Support */
+.offline-banner {
+    background: #e74c3c;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1001;
+    display: none;
+}
+
+.offline-banner.show {
+    display: block;
+}
+
+/* Accessibility */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Focus styles for keyboard navigation */
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid #667eea;
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .btn-primary {
+        background: #000;
+        color: #fff;
+    }
+    
+    .feature-card {
+        border: 2px solid #000;
+    }
+}
+
+/* New: Hero eyebrow and trust badges */
+.eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+    opacity: 0.95;
+}
+
+.eyebrow .pill {
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.35);
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+}
+
+.eyebrow .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.6);
+}
+
+.trust-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 16px;
+    margin-top: 18px;
+}
+
+.trust-badges .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.14);
+    border: 1px solid rgba(255,255,255,0.25);
+    backdrop-filter: blur(6px);
+    padding: 8px 12px;
+    border-radius: 999px;
+    color: #fff;
+    font-size: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.trust-badges .badge i { opacity: 0.95; }
+
+/* New: Decorative wave */
+.hero-wave { position: absolute; left: 0; right: 0; bottom: -1px; height: 120px; }
+.hero-wave svg { width: 100%; height: 100%; display: block; }
+
+/* New: Stats strip */
+.stats { background: #fff; padding: 28px 0; border-bottom: 1px solid #f0f2f6; }
+.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; align-items: center; }
+.stat { display: grid; gap: 2px; justify-items: center; }
+.stat-number { font-size: 1.6rem; font-weight: 700; color: #2c3e50; }
+.stat-label { font-size: 0.9rem; color: #667085; }
+
+@media (max-width: 768px) {
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* New: Quick actions */
+.quick-actions { background: #f8f9ff; padding: 60px 0; }
+.section-title { text-align: center; font-size: 2rem; margin-bottom: 2rem; color: #2c3e50; }
+.qa-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; }
+.qa-card { background: #fff; border-radius: 16px; padding: 20px; text-decoration: none; color: inherit; box-shadow: 0 10px 30px rgba(102, 126, 234, 0.15); border: 1px solid rgba(102,126,234,0.15); transition: transform 0.2s ease, box-shadow 0.2s ease; position: relative; overflow: hidden; }
+.qa-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(118, 75, 162, 0.22); }
+.qa-card h3 { margin-top: 14px; margin-bottom: 6px; font-size: 1.1rem; color: #2c3e50; }
+.qa-card p { color: #667085; font-size: 0.95rem; }
+.qa-icon { width: 48px; height: 48px; display: grid; place-items: center; border-radius: 12px; color: #fff; box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
+.qa-video { background: linear-gradient(135deg, #6a88f7, #8a7cf0); }
+.qa-records { background: linear-gradient(135deg, #00c8a0, #00a988); }
+.qa-pharmacy { background: linear-gradient(135deg, #ffa274, #ff7f50); }
+.qa-ai { background: linear-gradient(135deg, #7b61ff, #5a3fff); }
+
+/* New: Partners row */
+.partners { background: #fff; padding: 28px 0 48px; }
+.partners-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; align-items: center; justify-items: center; opacity: 0.9; }
+.partner { display: inline-flex; align-items: center; gap: 8px; color: #5f6c7b; background: #f8fafc; border: 1px solid #eef2f7; border-radius: 999px; padding: 8px 12px; }
+.partner i { color: #667eea; }
+
+/* Minor: improve links inside locked qa-cards visibility on gradient bg */
+.qa-card.locked::after { border-radius: 16px; }
+
+/* Chatbot Widget */
+.chatbot-toggle {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	z-index: 1100;
+	width: 56px;
+	height: 56px;
+	border-radius: 50%;
+	border: none;
+	background: linear-gradient(45deg, #667eea, #764ba2);
+	color: #fff;
+	box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+	cursor: pointer;
+}
+
+.chatbot-panel {
+	position: fixed;
+	bottom: 90px;
+	right: 20px;
+	width: 320px;
+	max-height: 60vh;
+	background: #fff;
+	border-radius: 14px;
+	box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+	overflow: hidden;
+	display: none;
+	z-index: 1100;
+}
+
+.chatbot-header {
+	background: linear-gradient(45deg, #667eea, #764ba2);
+	color: #fff;
+	padding: 10px 12px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.chatbot-header h4 { font-size: 1rem; }
+
+.chatbot-messages {
+	padding: 12px;
+	max-height: 40vh;
+	overflow-y: auto;
+	background: #f8fafc;
+}
+
+.message { display: grid; margin-bottom: 10px; }
+.message .bubble {
+	padding: 10px 12px;
+	border-radius: 12px;
+	max-width: 85%;
+	line-height: 1.4;
+	font-size: 0.95rem;
+}
+.message.user { justify-content: end; }
+.message.user .bubble { background: #e6ecff; color: #2c3e50; }
+.message.bot .bubble { background: #ffffff; border: 1px solid #eef2f7; color: #2c3e50; }
+
+.chatbot-input {
+	display: flex;
+	gap: 8px;
+	padding: 10px;
+	border-top: 1px solid #eef2f7;
+	background: #fff;
+}
+.chatbot-input input {
+	flex: 1;
+	padding: 10px 12px;
+	border: 2px solid #eee;
+	border-radius: 10px;
+	font-size: 0.95rem;
+}
+.chatbot-input button { padding: 10px 14px; }
+
+@media (max-width: 480px) {
+	.chatbot-panel { width: calc(100% - 30px); right: 15px; }
+}

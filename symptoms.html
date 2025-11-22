@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symptom Checker - RuralCare with X</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <i class="fas fa-heartbeat"></i>
+                <span>RuralCare with X</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="dashboard.html">Dashboard</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="symptoms-section" style="padding-top:120px">
+        <div class="container">
+            <h2>AI Symptom Checker</h2>
+            <div class="symptom-checker">
+                <div class="symptom-input">
+                    <h3>Describe your symptoms</h3>
+                    <textarea id="symptomDescription" placeholder="Enter your symptoms in detail..."></textarea>
+                    <div class="symptom-options">
+                        <button class="symptom-btn" data-symptom="fever">Fever</button>
+                        <button class="symptom-btn" data-symptom="cough">Cough</button>
+                        <button class="symptom-btn" data-symptom="headache">Headache</button>
+                        <button class="symptom-btn" data-symptom="nausea">Nausea</button>
+                        <button class="symptom-btn" data-symptom="fatigue">Fatigue</button>
+                        <button class="symptom-btn" data-symptom="pain">Pain</button>
+                    </div>
+                    <button class="btn btn-primary" onclick="analyzeSymptoms()">Analyze Symptoms</button>
+                </div>
+                <div class="symptom-results" id="symptomResults"></div>
+            </div>
+        </div>
+    </section>
+
+    <script src="config.js"></script>
+    <script src="translations.js"></script>
+    <script src="app.js"></script>
+    <script>
+        if (!localStorage.getItem('ruralcare_token')) {
+            window.location.replace('index.html');
+        }
+    </script>
+</body>
+</html>
+
